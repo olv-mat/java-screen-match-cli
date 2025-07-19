@@ -22,16 +22,17 @@ public class Main {
                     boolean hasSubscribed = true;
                     if (hasSubscribed) {
                         System.out.println("Movies Catalog");
-                        String movieTitle = "Hereditary";
-                        int releaseYear = 2018;
-                        String movieTag = releaseYear >= 2024 ? "New!" : "Classic!";
-                        double averageRating = (9.8 + 7.2 + 8 + 10) / 4;
-                        int stars = (int) (averageRating / 2);
+                        Movie movie = new Movie();
+                        movie.title = "Hereditary";
+                        movie.releaseYear = 2018;
+                        movie.averageRating = 9;
+                        String movieTag = movie.releaseYear >= 2024 ? "New!" : "Classic!";
+                        int stars = (int) (movie.averageRating / 2);
                         System.out.println("=".repeat(30));
                         System.out.println(movieTag);
-                        System.out.println("Movie: " + movieTitle);
-                        System.out.println("Release Year: " + releaseYear);
-                        System.out.println("Average Rating: " + averageRating);
+                        System.out.println("Movie: " + movie.title);
+                        System.out.println("Release Year: " + movie.releaseYear);
+                        System.out.println("Average Rating: " + movie.averageRating);
                         System.out.println("Stars: " + stars);
                     } else {
                         System.out.println("Please, Subscribe To Our Platform");
