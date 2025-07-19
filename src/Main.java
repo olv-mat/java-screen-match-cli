@@ -22,17 +22,18 @@ public class Main {
                     boolean hasSubscribed = true;
                     if (hasSubscribed) {
                         System.out.println("Movies Catalog");
-                        Movie movie = new Movie();
-                        movie.title = "Hereditary";
-                        movie.releaseYear = 2018;
-                        movie.averageRating = 9;
-                        String movieTag = movie.releaseYear >= 2024 ? "New!" : "Classic!";
-                        int stars = (int) (movie.averageRating / 2);
+
+                        Movie catalogMovie = new Movie();
+                        catalogMovie.title = "Hereditary";
+                        catalogMovie.releaseYear = 2018;
+                        catalogMovie.averageRating = 9;
+
+                        String tag = catalogMovie.averageRating >= 9 ? "Masterpiece!" : "Regular";
+                        int stars = (int) (catalogMovie.averageRating / 2);
+
                         System.out.println("=".repeat(30));
-                        System.out.println(movieTag);
-                        System.out.println("Movie: " + movie.title);
-                        System.out.println("Release Year: " + movie.releaseYear);
-                        System.out.println("Average Rating: " + movie.averageRating);
+                        System.out.println("Tag: " + tag);
+                        catalogMovie.displayMovieData();
                         System.out.println("Stars: " + stars);
                     } else {
                         System.out.println("Please, Subscribe To Our Platform");
@@ -40,22 +41,25 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Add Movie");
+                    Movie newMovie = new Movie();
                     System.out.println("=".repeat(30));
+
                     System.out.print("Movie Title: ");
-                    String newMovieTitle = input.nextLine();
+                    newMovie.title = input.nextLine();
+
                     System.out.print("Release Year: ");
-                    int newMovieReleaseYear = input.nextInt();
-                    double newMovieAverageRating = 0;
+                    newMovie.releaseYear = input.nextInt();
+
                     for (int i = 0; i < 4; i++) {
                         System.out.printf("Rating %d: ", i + 1);
-                        newMovieAverageRating += input.nextDouble();
+                        newMovie.addRating(input.nextDouble());
                     }
-                    newMovieAverageRating /= 4;
+
                     System.out.println("=".repeat(30));
                     System.out.println("New Movie Added Successfully");
-                    System.out.printf("Movie: %s%n", newMovieTitle);
-                    System.out.printf("Release Year: %d%n", newMovieReleaseYear);
-                    System.out.printf("Average Rating: %f%n", newMovieAverageRating);
+                    System.out.printf("Movie: %s%n", newMovie.title);
+                    System.out.printf("Release Year: %d%n", newMovie.releaseYear);
+                    System.out.printf("Average Rating: %f%n", newMovie.getAverageRating());
                     break;
                 case 3:
                     System.out.println("Thank You For Using Screen Match. See You Next Time!");
