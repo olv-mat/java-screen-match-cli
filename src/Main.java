@@ -26,15 +26,9 @@ public class Main {
                         Movie catalogMovie = new Movie();
                         catalogMovie.title = "Hereditary";
                         catalogMovie.releaseYear = 2018;
-                        catalogMovie.averageRating = 9;
-
-                        String tag = catalogMovie.averageRating >= 9 ? "Masterpiece!" : "Regular";
-                        int stars = (int) (catalogMovie.averageRating / 2);
 
                         System.out.println("=".repeat(30));
-                        System.out.println("Tag: " + tag);
-                        catalogMovie.displayMovieData();
-                        System.out.println("Stars: " + stars);
+                        catalogMovie.displayMovieInformation();
                     } else {
                         System.out.println("Please, Subscribe To Our Platform");
                     }
@@ -52,14 +46,12 @@ public class Main {
 
                     for (int i = 0; i < 4; i++) {
                         System.out.printf("Rating %d: ", i + 1);
-                        newMovie.addRating(input.nextDouble());
+                        newMovie.rateMovie(input.nextDouble());
                     }
 
                     System.out.println("=".repeat(30));
                     System.out.println("New Movie Added Successfully");
-                    System.out.printf("Movie: %s%n", newMovie.title);
-                    System.out.printf("Release Year: %d%n", newMovie.releaseYear);
-                    System.out.printf("Average Rating: %f%n", newMovie.getAverageRating());
+                    newMovie.displayMovieInformation();
                     break;
                 case 3:
                     System.out.println("Thank You For Using Screen Match. See You Next Time!");
