@@ -1,3 +1,4 @@
+import com.github.olvmat.screenmatchcli.models.Movie;
 import java.util.Scanner;
 
 public class Main {
@@ -22,11 +23,9 @@ public class Main {
                     boolean hasSubscribed = true;
                     if (hasSubscribed) {
                         System.out.println("Movies Catalog");
-
                         Movie catalogMovie = new Movie();
-                        catalogMovie.title = "Hereditary";
-                        catalogMovie.releaseYear = 2018;
-
+                        catalogMovie.setTitle("Hereditary");
+                        catalogMovie.setReleaseYear(2018);
                         System.out.println("=".repeat(30));
                         catalogMovie.displayMovieInformation();
                     } else {
@@ -37,18 +36,14 @@ public class Main {
                     System.out.println("Add Movie");
                     Movie newMovie = new Movie();
                     System.out.println("=".repeat(30));
-
                     System.out.print("Movie Title: ");
-                    newMovie.title = input.nextLine();
-
+                    newMovie.setTitle(input.nextLine());
                     System.out.print("Release Year: ");
-                    newMovie.releaseYear = input.nextInt();
-
+                    newMovie.setReleaseYear(input.nextInt());
                     for (int i = 0; i < 4; i++) {
                         System.out.printf("Rating %d: ", i + 1);
                         newMovie.rateMovie(input.nextDouble());
                     }
-
                     System.out.println("=".repeat(30));
                     System.out.println("New Movie Added Successfully");
                     newMovie.displayMovieInformation();
