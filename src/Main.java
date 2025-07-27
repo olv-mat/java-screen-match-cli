@@ -1,4 +1,5 @@
 import com.github.olvmat.screenmatchcli.models.Movie;
+import com.github.olvmat.screenmatchcli.models.Series;
 
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ public class Main {
         while (true) {
             String menu = """
                     Menu
-                    1 - Movies Catalog
+                    1 - Our Catalog
                     2 - Add Movie
                     3 - Exit
                     """;
@@ -23,15 +24,31 @@ public class Main {
                 case 1:
                     boolean hasSubscribed = true;
                     if (hasSubscribed) {
-                        System.out.println("Movies Catalog");
+                        System.out.println("Our Catalog");
+
                         Movie catalogMovie = new Movie();
                         catalogMovie.setName("Hereditary");
                         catalogMovie.setReleaseYear(2018);
                         catalogMovie.setDirector("Ari Aster");
                         catalogMovie.rateTitle(10);
                         catalogMovie.rateTitle(8.6);
+
+                        Series catalogSeries = new Series();
+                        catalogSeries.setName("The Eternaut");
+                        catalogSeries.setReleaseYear(2025);
+                        catalogSeries.setSeasons(1);
+                        catalogSeries.setEpisodes(6);
+                        catalogSeries.setActive(true);
+                        catalogSeries.rateTitle(10);
+                        catalogSeries.rateTitle(6.5);
+                        catalogSeries.rateTitle(8.6);
+                        catalogSeries.rateTitle(9.1);
+
                         System.out.println("=".repeat(30));
-                        displayMovieData(catalogMovie);
+                        catalogMovie.displayData();
+                        System.out.println("=".repeat(30));
+                        catalogSeries.displayData();
+
                     } else {
                         System.out.println("Please, Subscribe To Our Platform");
                     }
@@ -53,7 +70,7 @@ public class Main {
                     }
                     System.out.println("=".repeat(30));
                     System.out.println("New Movie Added Successfully");
-                    displayMovieData(newMovie);
+                    newMovie.displayData();
                     break;
                 case 3:
                     System.out.println("Thank You For Using Screen Match. See You Next Time!");
@@ -63,15 +80,5 @@ public class Main {
                     break;
             }
         }
-    }
-
-    public static void displayMovieData (Movie movie) {
-        System.out.println("Movie: " + movie.getName());
-        System.out.println("Release Year: " + movie.getReleaseYear());
-        System.out.println("Director: " + movie.getDirector());
-        System.out.println("Ratings Amount: " + movie.getRatingsAmount());
-        System.out.println("Average Rating: " + movie.getAverageRating());
-        System.out.println("Stars: " + movie.getStars());
-        System.out.println(movie.generateTag());
     }
 }

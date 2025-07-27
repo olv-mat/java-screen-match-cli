@@ -1,6 +1,6 @@
 package com.github.olvmat.screenmatchcli.models;
 
-public class Title {
+public abstract class Title {
     private String name;
     private int releaseYear;
     private double ratingsSum;
@@ -47,6 +47,15 @@ public class Title {
         return this.stars >= 4 ? "Masterpiece!" : "Regular";
     }
 
+    public void displayData() {
+        System.out.println(this.generateTag());
+        System.out.println("Title: " + this.getName());
+        System.out.println("Release Year: " + this.getReleaseYear());
+        System.out.println("Ratings Amount: " + this.getRatingsAmount());
+        System.out.println("Average Rating: " + this.getAverageRating());
+        System.out.println("Stars: " + this.getStars());
+    }
+
     private void calculateAverageRating() {
         this.averageRating = this.ratingsSum / this.ratingsAmount;
     }
@@ -54,5 +63,4 @@ public class Title {
     private void calculateStars() {
         this.stars = (int) (this.averageRating / 2);
     }
-
 }
