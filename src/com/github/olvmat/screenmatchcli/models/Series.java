@@ -3,6 +3,7 @@ package com.github.olvmat.screenmatchcli.models;
 public class Series extends Title {
     private int seasons;
     private int episodes;
+    private int episodesDurationAverage;
     private boolean active;
 
     public int getSeasons() {
@@ -25,20 +26,26 @@ public class Series extends Title {
         this.episodes = episodes;
     }
 
+    public void setEpisodesDurationAverage(int episodesDurationAverage) {
+        this.episodesDurationAverage = episodesDurationAverage;
+        this.setDuration(this.episodes * this.episodesDurationAverage);
+    }
+
     public void setActive(boolean active) {
         this.active = active;
     }
 
     @Override
-    public void displayData() {
-        System.out.println(this.generateTag());
-        System.out.println("Series: " + this.getName());
-        System.out.println("Release Year: " + this.getReleaseYear());
-        System.out.println("Seasons: " + this.getSeasons());
-        System.out.println("Episodes: " + this.getEpisodes());
-        System.out.println("Active: " + this.getActive());
-        System.out.println("Ratings Amount: " + this.getRatingsAmount());
-        System.out.println("Average Rating: " + this.getAverageRating());
-        System.out.println("Stars: " + this.getStars());
+    public String getData() {
+        return this.generateTag() + "\n" +
+                "Series: " + this.getName() + "\n" +
+                "Release Year: " + this.getReleaseYear() + "\n" +
+                "Seasons: " + this.getSeasons() + "\n" +
+                "Episodes: " + this.getEpisodes() + "\n" +
+                "Duration: " + this.getDuration() + " Minutes\n" +
+                "Active: " + this.getActive() + "\n" +
+                "Ratings Amount: " + this.getRatingsAmount() + "\n" +
+                "Average Rating: " + this.getAverageRating() + "\n" +
+                "Stars: " + this.getStars() + "\n";
     }
 }

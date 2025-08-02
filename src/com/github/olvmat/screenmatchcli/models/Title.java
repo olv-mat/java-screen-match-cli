@@ -3,6 +3,7 @@ package com.github.olvmat.screenmatchcli.models;
 public abstract class Title {
     private String name;
     private int releaseYear;
+    private int duration;
     private double ratingsSum;
     private int ratingsAmount;
     private double averageRating;
@@ -14,6 +15,10 @@ public abstract class Title {
 
     public int getReleaseYear() {
         return this.releaseYear;
+    }
+
+    public int getDuration() {
+        return this.duration;
     }
 
     public int getRatingsAmount() {
@@ -36,6 +41,10 @@ public abstract class Title {
         this.releaseYear = releaseYear;
     }
 
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
     public void rateTitle(double rating) {
         this.ratingsSum += rating;
         this.ratingsAmount ++;
@@ -47,13 +56,14 @@ public abstract class Title {
         return this.stars >= 4 ? "Masterpiece!" : "Regular";
     }
 
-    public void displayData() {
-        System.out.println(this.generateTag());
-        System.out.println("Title: " + this.getName());
-        System.out.println("Release Year: " + this.getReleaseYear());
-        System.out.println("Ratings Amount: " + this.getRatingsAmount());
-        System.out.println("Average Rating: " + this.getAverageRating());
-        System.out.println("Stars: " + this.getStars());
+    public String getData() {
+        return this.generateTag() + "\n" +
+                "Title: " + this.getName() + "\n" +
+                "Release Year: " + this.getReleaseYear() + "\n" +
+                "Duration: " + this.getDuration() + "\n" +
+                "Ratings Amount: " + this.getRatingsAmount() + "\n" +
+                "Average Rating: " + this.getAverageRating() + "\n" +
+                "Stars: " + this.getStars() + "\n";
     }
 
     private void calculateAverageRating() {

@@ -12,13 +12,14 @@ public class Movie extends Title {
     }
 
     @Override
-    public void displayData() {
-        System.out.println(this.generateTag());
-        System.out.println("Movie: " + this.getName());
-        System.out.println("Release Year: " + this.getReleaseYear());
-        System.out.println("Director: " + this.getDirector());
-        System.out.println("Ratings Amount: " + this.getRatingsAmount());
-        System.out.println("Average Rating: " + this.getAverageRating());
-        System.out.println("Stars: " + this.getStars());
+    public String getData() {
+        return this.generateTag() + "\n" +
+                "Movie: " + this.getName() + "\n" +
+                "Release Year: " + this.getReleaseYear() + "\n" +
+                "Duration: " + this.getDuration() + " Minutes\n" +
+                "Director: " + this.getDirector() + "\n" +
+                "Ratings Amount: " + this.getRatingsAmount() + "\n" +
+                "Average Rating: " + this.getAverageRating() + "\n" +
+                "Stars: " + this.getStars() + "\n";
     }
 }
