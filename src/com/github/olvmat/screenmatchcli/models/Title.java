@@ -1,13 +1,19 @@
 package com.github.olvmat.screenmatchcli.models;
 
-public abstract class Title {
-    private String name;
-    private int releaseYear;
-    private int duration;
-    private double ratingsSum;
+import com.github.olvmat.screenmatchcli.interfaces.Classifiable;
+
+public abstract class Title implements Classifiable {
+    private final String name;
+    private final int releaseYear;
+    protected int duration;
     private int ratingsAmount;
+    private double ratingsSum;
     private double averageRating;
-    private int stars;
+
+    public Title(String name, int releaseYear) {
+        this.name = name;
+        this.releaseYear = releaseYear;
+    }
 
     public String getName() {
         return name;
@@ -29,48 +35,21 @@ public abstract class Title {
         return this.averageRating;
     }
 
-    public int getStars() {
-        return this.stars;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setReleaseYear(int releaseYear) {
-        this.releaseYear = releaseYear;
-    }
-
     public void setDuration(int duration) {
         this.duration = duration;
     }
 
-    public void rateTitle(double rating) {
-        this.ratingsSum += rating;
+    public void rate(double rating) {
         this.ratingsAmount ++;
+        this.ratingsSum += rating;
         this.calculateAverageRating();
-        this.calculateStars();
     }
 
-    public String generateTag() {
-        return this.stars >= 4 ? "Masterpiece!" : "Regular";
-    }
-
-    public String getData() {
-        return this.generateTag() + "\n" +
-                "Title: " + this.getName() + "\n" +
-                "Release Year: " + this.getReleaseYear() + "\n" +
-                "Duration: " + this.getDuration() + "\n" +
-                "Ratings Amount: " + this.getRatingsAmount() + "\n" +
-                "Average Rating: " + this.getAverageRating() + "\n" +
-                "Stars: " + this.getStars() + "\n";
+    public int getStarsClassification() {
+        return (int) (this.averageRating / 2);
     }
 
     private void calculateAverageRating() {
         this.averageRating = this.ratingsSum / this.ratingsAmount;
-    }
-
-    private void calculateStars() {
-        this.stars = (int) (this.averageRating / 2);
     }
 }

@@ -1,25 +1,28 @@
 package com.github.olvmat.screenmatchcli.models;
 
 public class Movie extends Title {
-    private String director;
+    private final String director;
+
+    public Movie(
+            String name,
+            int releaseYear,
+            String director
+    ) {
+        super(name, releaseYear);
+        this.director = director;
+    }
 
     public String getDirector() {
         return this.director;
     }
 
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    @Override
-    public String getData() {
-        return this.generateTag() + "\n" +
-                "Movie: " + this.getName() + "\n" +
+    public String getInformation() {
+        return "Movie: " + this.getName() + "\n" +
                 "Release Year: " + this.getReleaseYear() + "\n" +
-                "Duration: " + this.getDuration() + " Minutes\n" +
                 "Director: " + this.getDirector() + "\n" +
+                "Duration: " + this.getDuration() + " Minutes\n" +
                 "Ratings Amount: " + this.getRatingsAmount() + "\n" +
                 "Average Rating: " + this.getAverageRating() + "\n" +
-                "Stars: " + this.getStars() + "\n";
+                "Stars: " + this.getStarsClassification() + "\n";
     }
 }

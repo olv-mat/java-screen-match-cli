@@ -2,7 +2,7 @@ package com.github.olvmat.screenmatchcli.utils;
 
 import com.github.olvmat.screenmatchcli.models.Title;
 
-public class TimeCalculator {
+public class MarathonCalculator {
     private int totalTime;
 
     public int getTotalTime() {
