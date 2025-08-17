@@ -1,4 +1,4 @@
-package com.github.olvmat.screenmatchcli.models;
+package com.github.olvmat.screenmatchcli.models.titles;
 
 public class Series extends Title {
     private final int seasons;

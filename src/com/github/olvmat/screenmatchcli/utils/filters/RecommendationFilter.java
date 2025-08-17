@@ -1,4 +1,4 @@
-package com.github.olvmat.screenmatchcli.utils;
+package com.github.olvmat.screenmatchcli.utils.filters;
 
 import com.github.olvmat.screenmatchcli.interfaces.Classifiable;
 

@@ -1,4 +1,4 @@
-package com.github.olvmat.screenmatchcli.models;
+package com.github.olvmat.screenmatchcli.models.titles;
 
 import com.github.olvmat.screenmatchcli.interfaces.Classifiable;
 
@@ -51,5 +51,10 @@ public abstract class Title implements Classifiable {
 
     private void calculateAverageRating() {
         this.averageRating = this.ratingsSum / this.ratingsAmount;
+    }
+
+    @Override
+    public String toString() {
+        return this.name + " (" + this.releaseYear + ")";
     }
 }

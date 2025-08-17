@@ -1,6 +1,6 @@
-package com.github.olvmat.screenmatchcli.utils;
+package com.github.olvmat.screenmatchcli.utils.calculators;
 
-import com.github.olvmat.screenmatchcli.models.Title;
+import com.github.olvmat.screenmatchcli.models.titles.Title;
 
 public class MarathonCalculator {
     private int totalTime;

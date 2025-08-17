@@ -1,4 +1,4 @@
-package com.github.olvmat.screenmatchcli.models;
+package com.github.olvmat.screenmatchcli.models.titles;
 
 import com.github.olvmat.screenmatchcli.interfaces.Classifiable;
 
