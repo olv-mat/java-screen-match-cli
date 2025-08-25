@@ -3,6 +3,7 @@ package com.github.olvmat.screenmatchcli.models.titles;
 public class Series extends Title {
     private final int seasons;
     private final int episodes;
+    private final int episodesDurationAverage;
     private final boolean active;
 
     public Series(
@@ -10,40 +11,30 @@ public class Series extends Title {
             int releaseYear,
             int seasons,
             int episodes,
+            int episodesDurationAverage,
             boolean active
     ) {
-        super(name, releaseYear);
+        super(name, releaseYear, (episodes * episodesDurationAverage));
         this.seasons = seasons;
         this.episodes = episodes;
+        this.episodesDurationAverage = episodesDurationAverage;
         this.active = active;
     }
 
-    public int getSeasons() {
-        return this.seasons;
-    }
-
-    public int getEpisodes() {
-        return this.episodes;
-    }
-
-    public String getActive() {
+    public String isActive() {
         return this.active ? "Yes" : "No";
     }
 
-    @Override
-    public void setDuration(int episodesDurationAverage) {
-        this.duration = this.episodes * episodesDurationAverage;
-    }
-
-    public String getInformation() {
-        return "Series: " + this.getName() + "\n" +
-                "Release Year: " + this.getReleaseYear() + "\n" +
-                "Seasons: " + this.getSeasons() + "\n" +
-                "Episodes: " + this.getEpisodes() + "\n" +
-                "Active: " + this.getActive() + "\n" +
-                "Duration: " + this.getDuration() + " Minutes\n" +
-                "Ratings Amount: " + this.getRatingsAmount() + "\n" +
-                "Average Rating: " + this.getAverageRating() + "\n" +
-                "Stars: " + this.getStarsClassification() + "\n";
+    public String info() {
+        return "Series: " + this.name + "\n" +
+                "Active: " + this.isActive() + "\n" +
+                "Release Year: " + this.releaseYear + "\n" +
+                "Seasons: " + this.seasons + "\n" +
+                "Episodes: " + this.episodes + "\n" +
+                "Episodes Duration Average: " + this.episodesDurationAverage + "\n" +
+                "Total Duration: " + this.duration + " Minutes\n" +
+                "Ratings Amount: " + this.ratingsAmount + "\n" +
+                "Average Rating: " + getAverageRating() + "\n" +
+                "Stars: " + this.starsClassification() + "\n";
     }
 }

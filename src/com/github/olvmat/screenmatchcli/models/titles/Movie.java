@@ -6,23 +6,20 @@ public class Movie extends Title {
     public Movie(
             String name,
             int releaseYear,
+            int duration,
             String director
     ) {
-        super(name, releaseYear);
+        super(name, releaseYear, duration);
         this.director = director;
     }
 
-    public String getDirector() {
-        return this.director;
-    }
-
-    public String getInformation() {
-        return "Movie: " + this.getName() + "\n" +
-                "Release Year: " + this.getReleaseYear() + "\n" +
-                "Director: " + this.getDirector() + "\n" +
-                "Duration: " + this.getDuration() + " Minutes\n" +
-                "Ratings Amount: " + this.getRatingsAmount() + "\n" +
-                "Average Rating: " + this.getAverageRating() + "\n" +
-                "Stars: " + this.getStarsClassification() + "\n";
+    public String info() {
+        return "Movie: " + this.name + "\n" +
+                "Release Year: " + this.releaseYear + "\n" +
+                "Director: " + this.director + "\n" +
+                "Duration: " + this.duration + " Minutes\n" +
+                "Ratings Amount: " + this.ratingsAmount + "\n" +
+                "Average Rating: " + getAverageRating() + "\n" +
+                "Stars: " + this.starsClassification() + "\n";
     }
 }

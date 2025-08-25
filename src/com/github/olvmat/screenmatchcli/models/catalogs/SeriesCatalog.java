@@ -9,16 +9,16 @@ public class SeriesCatalog extends Catalog<Series> {
                 2025,
                 1,
                 6,
+                56,
                 true
         ));
-        this.getItem(0).setDuration(56);
         this.addItem(new Series(
                 "Stranger Things",
                 2016,
                 4,
                 34,
+                61,
                 true
         ));
-        this.getItem(1).setDuration(61);
     }
 }

@@ -7,14 +7,14 @@ public class MoviesCatalog extends Catalog<Movie> {
         this.addItem(new Movie(
                 "Hereditary",
                 2018,
+                127,
                 "Ari Aster"
         ));
-        this.getItem(0).setDuration(127);
         this.addItem(new Movie(
                 "The Witch",
                 2015,
+                92,
                 "Robert Eggers"
         ));
-        this.getItem(1).setDuration(92);
     }
 }

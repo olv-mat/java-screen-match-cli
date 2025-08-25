@@ -3,40 +3,25 @@ package com.github.olvmat.screenmatchcli.models.titles;
 import com.github.olvmat.screenmatchcli.interfaces.Classifiable;
 
 public abstract class Title implements Classifiable {
-    private final String name;
-    private final int releaseYear;
+    protected final String name;
+    protected final int releaseYear;
     protected int duration;
-    private int ratingsAmount;
+    protected int ratingsAmount;
     private double ratingsSum;
-    private double averageRating;
+    protected double averageRating;
 
-    public Title(String name, int releaseYear) {
+    public Title(String name, int releaseYear, int duration) {
         this.name = name;
         this.releaseYear = releaseYear;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getReleaseYear() {
-        return this.releaseYear;
+        this.duration = duration;
     }
 
     public int getDuration() {
         return this.duration;
     }
 
-    public int getRatingsAmount() {
-        return this.ratingsAmount;
-    }
-
-    public double getAverageRating() {
-        return this.averageRating;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
+    public String getAverageRating() {
+        return String.format("%.2f", this.averageRating);
     }
 
     public void rate(double rating) {
@@ -45,12 +30,12 @@ public abstract class Title implements Classifiable {
         this.calculateAverageRating();
     }
 
-    public int getStarsClassification() {
-        return (int) (this.averageRating / 2);
-    }
-
     private void calculateAverageRating() {
         this.averageRating = this.ratingsSum / this.ratingsAmount;
+    }
+
+    public int starsClassification() {
+        return (int) (this.averageRating / 2);
     }
 
     @Override

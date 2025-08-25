@@ -20,23 +20,11 @@ public class Episode implements Classifiable {
         this.views = views;
     }
 
-    public String getSeries() {
-        return this.series.getName();
+    public String seriesName() {
+        return this.series.name;
     }
 
-    public String getEpisode() {
-        return episode;
-    }
-
-    public int getNumber() {
-        return this.number;
-    }
-
-    public int getViews() {
-        return this.views;
-    }
-
-    public int getStarsClassification() {
+    public int starsClassification() {
         int views = this.views;
         if (views <= 100) {
             return 1;
@@ -51,10 +39,15 @@ public class Episode implements Classifiable {
         }
     }
 
-    public String getInformation() {
-        return "Series: " + this.getSeries() + "\n" +
-                "Episode: " + this.getNumber() + ". " + this.getEpisode() + "\n" +
-                "Views: " + this.getViews() + "\n" +
-                "Stars: " + this.getStarsClassification() + "\n";
+    public String info() {
+        return "Series: " + this.series + "\n" +
+                "Episode: " + this.number + ". " + this.episode + "\n" +
+                "Views: " + this.views + "\n" +
+                "Stars: " + this.starsClassification() + "\n";
+    }
+
+    @Override
+    public String toString() {
+        return this.episode + " (" + this.seriesName() + ")";
     }
 }
