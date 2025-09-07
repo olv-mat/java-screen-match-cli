@@ -14,6 +14,9 @@ import com.github.olvmat.screenmatchcli.utils.filters.RecommendationFilter;
 import com.github.olvmat.screenmatchcli.utils.filters.WatchedFilter;
 import com.github.olvmat.screenmatchcli.utils.ratings.SimulateRatings;
 
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Screen Match");
@@ -49,7 +52,9 @@ public class Main {
                 switch (option) {
                     case 1:
                         System.out.println("Movies Catalog");
-                        for (Movie movie: moviesCatalog.getItems()) {
+                        List<Movie> movies = moviesCatalog.getItems();
+                        Collections.sort(movies);
+                        for (Movie movie: movies) {
                             watchedFilter.add(movie);
                             SimulateRatings.simulate(movie);
                             ConsoleDisplay.display(movie.info());
@@ -58,7 +63,9 @@ public class Main {
                         break;
                     case 2:
                         System.out.println("Series Catalog");
-                        for (Series series: seriesCatalog.getItems()) {
+                        List<Series> seriesList = seriesCatalog.getItems();
+                        Collections.sort(seriesList);
+                        for (Series series: seriesList) {
                             watchedFilter.add(series);
                             SimulateRatings.simulate(series);
                             ConsoleDisplay.display(series.info());

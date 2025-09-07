@@ -2,7 +2,7 @@ package com.github.olvmat.screenmatchcli.models.titles;
 
 import com.github.olvmat.screenmatchcli.interfaces.Classifiable;
 
-public abstract class Title implements Classifiable {
+public abstract class Title implements Classifiable, Comparable<Title> {
     protected final String name;
     protected final int releaseYear;
     protected int duration;
@@ -36,6 +36,11 @@ public abstract class Title implements Classifiable {
 
     public int starsClassification() {
         return (int) (this.averageRating / 2);
+    }
+
+    @Override
+    public int compareTo(Title otherTitle) {
+        return this.name.compareTo(otherTitle.name);
     }
 
     @Override

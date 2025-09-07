@@ -11,7 +11,7 @@ public abstract class Catalog<T> {
     }
 
     public List<T> getItems() {
-        return List.copyOf(this.items);
+        return new ArrayList<>(this.items);
     }
 
     public T getItem(int index) {
