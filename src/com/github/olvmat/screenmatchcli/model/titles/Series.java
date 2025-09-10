@@ -1,24 +1,31 @@
-package com.github.olvmat.screenmatchcli.models.titles;
+package com.github.olvmat.screenmatchcli.model.titles;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Series extends Title {
     private final int seasons;
     private final int episodes;
-    private final int episodesDurationAverage;
     private final boolean active;
+    private final List<Episode> episodesList;
 
     public Series(
             String name,
             int releaseYear,
             int seasons,
-            int episodes,
             int episodesDurationAverage,
-            boolean active
+            boolean active,
+            List<Episode> episodesList
     ) {
-        super(name, releaseYear, (episodes * episodesDurationAverage));
+        super(name, releaseYear, (episodesList.size() * episodesDurationAverage));
         this.seasons = seasons;
-        this.episodes = episodes;
-        this.episodesDurationAverage = episodesDurationAverage;
+        this.episodes = episodesList.size();
         this.active = active;
+        this.episodesList = episodesList;
+    }
+
+    public List<Episode> getEpisodesList() {
+        return new ArrayList<>(this.episodesList);
     }
 
     public String isActive() {
@@ -31,7 +38,6 @@ public class Series extends Title {
                 "Release Year: " + this.releaseYear + "\n" +
                 "Seasons: " + this.seasons + "\n" +
                 "Episodes: " + this.episodes + "\n" +
-                "Episodes Duration Average: " + this.episodesDurationAverage + "\n" +
                 "Total Duration: " + this.duration + " Minutes\n" +
                 "Ratings Amount: " + this.ratingsAmount + "\n" +
                 "Average Rating: " + getAverageRating() + "\n" +

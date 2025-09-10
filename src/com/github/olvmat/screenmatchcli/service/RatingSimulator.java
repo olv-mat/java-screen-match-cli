@@ -1,10 +1,10 @@
-package com.github.olvmat.screenmatchcli.utils.ratings;
+package com.github.olvmat.screenmatchcli.service;
 
-import com.github.olvmat.screenmatchcli.models.titles.Title;
+import com.github.olvmat.screenmatchcli.model.titles.Title;
 
 import java.util.Random;
 
-public class SimulateRatings {
+public class RatingSimulator {
     private static final Random random = new Random();
 
     public static void simulate(Title title) {

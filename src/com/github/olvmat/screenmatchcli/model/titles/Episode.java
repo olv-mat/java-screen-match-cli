@@ -1,27 +1,20 @@
-package com.github.olvmat.screenmatchcli.models.titles;
+package com.github.olvmat.screenmatchcli.model.titles;
 
-import com.github.olvmat.screenmatchcli.interfaces.Classifiable;
+import com.github.olvmat.screenmatchcli.model.Classifiable;
 
 public class Episode implements Classifiable {
-    private final Series series;
-    private final String episode;
     private final int number;
+    private final String name;
     private final int views;
 
     public Episode(
-            Series series,
-            String episode,
             int number,
+            String name,
             int views
     ) {
-        this.series = series;
-        this.episode = episode;
         this.number = number;
+        this.name = name;
         this.views = views;
-    }
-
-    public String seriesName() {
-        return this.series.name;
     }
 
     public int starsClassification() {
@@ -40,14 +33,8 @@ public class Episode implements Classifiable {
     }
 
     public String info() {
-        return "Series: " + this.series + "\n" +
-                "Episode: " + this.number + ". " + this.episode + "\n" +
+        return "Episode: " + this.number + ". " + this.name + "\n" +
                 "Views: " + this.views + "\n" +
                 "Stars: " + this.starsClassification() + "\n";
-    }
-
-    @Override
-    public String toString() {
-        return this.episode + " (" + this.seriesName() + ")";
     }
 }

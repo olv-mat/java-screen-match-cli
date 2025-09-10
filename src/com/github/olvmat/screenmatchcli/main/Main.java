@@ -1,20 +1,19 @@
 package com.github.olvmat.screenmatchcli.main;
 
-import com.github.olvmat.screenmatchcli.models.catalogs.EpisodesCatalog;
-import com.github.olvmat.screenmatchcli.models.titles.Episode;
-import com.github.olvmat.screenmatchcli.models.titles.Movie;
-import com.github.olvmat.screenmatchcli.models.titles.Series;
-import com.github.olvmat.screenmatchcli.models.catalogs.MoviesCatalog;
-import com.github.olvmat.screenmatchcli.models.catalogs.SeriesCatalog;
-import com.github.olvmat.screenmatchcli.models.titles.Title;
-import com.github.olvmat.screenmatchcli.utils.console.ConsoleDisplay;
-import com.github.olvmat.screenmatchcli.utils.calculators.MarathonCalculator;
-import com.github.olvmat.screenmatchcli.utils.console.ConsoleInput;
-import com.github.olvmat.screenmatchcli.utils.filters.RecommendationFilter;
-import com.github.olvmat.screenmatchcli.utils.filters.WatchedFilter;
-import com.github.olvmat.screenmatchcli.utils.ratings.SimulateRatings;
+import com.github.olvmat.screenmatchcli.model.titles.Movie;
+import com.github.olvmat.screenmatchcli.model.titles.Series;
+import com.github.olvmat.screenmatchcli.model.catalogs.MoviesCatalog;
+import com.github.olvmat.screenmatchcli.model.catalogs.SeriesCatalog;
+import com.github.olvmat.screenmatchcli.model.titles.Title;
+import com.github.olvmat.screenmatchcli.console.ConsoleDisplay;
+import com.github.olvmat.screenmatchcli.service.MarathonCalculator;
+import com.github.olvmat.screenmatchcli.console.ConsoleInput;
+import com.github.olvmat.screenmatchcli.service.RecommendationFilter;
+import com.github.olvmat.screenmatchcli.service.WatchedFilter;
+import com.github.olvmat.screenmatchcli.service.RatingSimulator;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -24,7 +23,6 @@ public class Main {
         ConsoleInput consoleInput = new ConsoleInput();
         MoviesCatalog moviesCatalog = new MoviesCatalog();
         SeriesCatalog seriesCatalog = new SeriesCatalog();
-        EpisodesCatalog episodesCatalog = new EpisodesCatalog();
         MarathonCalculator marathonCalculator = new MarathonCalculator();
         RecommendationFilter recommendationFilter = new RecommendationFilter();
         WatchedFilter watchedFilter = new WatchedFilter();
@@ -42,9 +40,8 @@ public class Main {
                         Menu
                         1 - Movies Catalog
                         2 - Series Catalog
-                        3 - Episodes
-                        4 - Watched
-                        5 - Exit
+                        3 - Watched
+                        4 - Exit
                         """;
                 ConsoleDisplay.display(menu);
                 ConsoleDisplay.display("Option: ");
@@ -56,7 +53,7 @@ public class Main {
                         Collections.sort(movies);
                         for (Movie movie: movies) {
                             watchedFilter.add(movie);
-                            SimulateRatings.simulate(movie);
+                            RatingSimulator.simulate(movie);
                             ConsoleDisplay.display(movie.info());
                             System.out.println(recommendationFilter.recommend(movie));
                         }
@@ -64,28 +61,21 @@ public class Main {
                     case 2:
                         System.out.println("Series Catalog");
                         List<Series> seriesList = seriesCatalog.getItems();
-                        Collections.sort(seriesList);
+                        seriesList.sort(Comparator.comparing(Title::getDuration));
                         for (Series series: seriesList) {
                             watchedFilter.add(series);
-                            SimulateRatings.simulate(series);
+                            RatingSimulator.simulate(series);
                             ConsoleDisplay.display(series.info());
                             System.out.println(recommendationFilter.recommend(series));
                         }
                         break;
                     case 3:
-                        System.out.println("Episodes");
-                        for (Episode episode: episodesCatalog.getItems()) {
-                            ConsoleDisplay.display(episode.info());
-                            System.out.println(recommendationFilter.recommend(episode));
-                        }
-                        break;
-                    case 4:
                         System.out.println("Watched");
                         for (Title title: watchedFilter.allWatched()) {
                             System.out.println(title);
                         }
                         break;
-                    case 5:
+                    case 4:
                         System.out.println("Thank You For Using Screen Match!");
                         return;
                     default:

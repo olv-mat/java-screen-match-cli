@@ -1,4 +1,4 @@
-package com.github.olvmat.screenmatchcli.interfaces;
+package com.github.olvmat.screenmatchcli.model;
 
 public interface Classifiable {
     int starsClassification();

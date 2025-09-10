@@ -1,6 +1,6 @@
-package com.github.olvmat.screenmatchcli.models.titles;
+package com.github.olvmat.screenmatchcli.model.titles;
 
-import com.github.olvmat.screenmatchcli.interfaces.Classifiable;
+import com.github.olvmat.screenmatchcli.model.Classifiable;
 
 public abstract class Title implements Classifiable, Comparable<Title> {
     protected final String name;

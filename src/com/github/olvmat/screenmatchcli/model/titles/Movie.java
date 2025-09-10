@@ -1,4 +1,4 @@
-package com.github.olvmat.screenmatchcli.models.titles;
+package com.github.olvmat.screenmatchcli.model.titles;
 
 public class Movie extends Title {
     private final String director;

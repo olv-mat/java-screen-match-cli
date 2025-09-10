@@ -1,6 +1,6 @@
-package com.github.olvmat.screenmatchcli.utils.filters;
+package com.github.olvmat.screenmatchcli.service;
 
-import com.github.olvmat.screenmatchcli.models.titles.Title;
+import com.github.olvmat.screenmatchcli.model.titles.Title;
 
 import java.util.ArrayList;
 import java.util.List;
