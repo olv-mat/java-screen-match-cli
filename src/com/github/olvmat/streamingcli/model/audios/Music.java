@@ -29,6 +29,6 @@ public class Music extends Audio {
 
     @Override
     public String toString() {
-        return this.name + "(" + this.singer + ")";
+        return this.name + " (" + this.singer + ")";
     }
 }

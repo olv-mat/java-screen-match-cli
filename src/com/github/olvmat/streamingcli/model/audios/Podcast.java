@@ -29,6 +29,6 @@ public class Podcast extends Audio {
 
     @Override
     public String toString() {
-        return this.name + "(" + this.host + ")";
+        return this.name + " (" + this.host + ")";
     }
 }
