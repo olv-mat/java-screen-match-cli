@@ -1,4 +1,4 @@
-package com.github.olvmat.screenmatchcli.console;
+package com.github.olvmat.streamingcli.console;
 
 import java.util.Scanner;
 

@@ -1,7 +1,7 @@
-package com.github.olvmat.screenmatchcli.model.catalogs;
+package com.github.olvmat.streamingcli.model.catalogs;
 
-import com.github.olvmat.screenmatchcli.model.titles.Episode;
-import com.github.olvmat.screenmatchcli.model.titles.Series;
+import com.github.olvmat.streamingcli.model.titles.Episode;
+import com.github.olvmat.streamingcli.model.titles.Series;
 
 import java.util.ArrayList;
 import java.util.List;

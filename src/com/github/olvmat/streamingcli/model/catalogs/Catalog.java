@@ -1,4 +1,4 @@
-package com.github.olvmat.screenmatchcli.model.catalogs;
+package com.github.olvmat.streamingcli.model.catalogs;
 
 import java.util.ArrayList;
 import java.util.List;

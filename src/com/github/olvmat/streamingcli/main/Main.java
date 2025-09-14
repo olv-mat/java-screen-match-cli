@@ -1,16 +1,16 @@
-package com.github.olvmat.screenmatchcli.main;
+package com.github.olvmat.streamingcli.main;
 
-import com.github.olvmat.screenmatchcli.model.titles.Movie;
-import com.github.olvmat.screenmatchcli.model.titles.Series;
-import com.github.olvmat.screenmatchcli.model.catalogs.MoviesCatalog;
-import com.github.olvmat.screenmatchcli.model.catalogs.SeriesCatalog;
-import com.github.olvmat.screenmatchcli.model.titles.Title;
-import com.github.olvmat.screenmatchcli.console.ConsoleDisplay;
-import com.github.olvmat.screenmatchcli.service.MarathonCalculator;
-import com.github.olvmat.screenmatchcli.console.ConsoleInput;
-import com.github.olvmat.screenmatchcli.service.RecommendationFilter;
-import com.github.olvmat.screenmatchcli.service.WatchedFilter;
-import com.github.olvmat.screenmatchcli.service.RatingSimulator;
+import com.github.olvmat.streamingcli.model.titles.Movie;
+import com.github.olvmat.streamingcli.model.titles.Series;
+import com.github.olvmat.streamingcli.model.catalogs.MoviesCatalog;
+import com.github.olvmat.streamingcli.model.catalogs.SeriesCatalog;
+import com.github.olvmat.streamingcli.model.titles.Title;
+import com.github.olvmat.streamingcli.console.ConsoleDisplay;
+import com.github.olvmat.streamingcli.service.MarathonCalculator;
+import com.github.olvmat.streamingcli.console.ConsoleInput;
+import com.github.olvmat.streamingcli.service.RecommendationFilter;
+import com.github.olvmat.streamingcli.service.WatchedFilter;
+import com.github.olvmat.streamingcli.service.RatingSimulator;
 
 import java.util.Collections;
 import java.util.Comparator;

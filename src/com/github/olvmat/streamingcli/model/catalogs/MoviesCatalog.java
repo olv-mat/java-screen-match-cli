@@ -1,6 +1,6 @@
-package com.github.olvmat.screenmatchcli.model.catalogs;
+package com.github.olvmat.streamingcli.model.catalogs;
 
-import com.github.olvmat.screenmatchcli.model.titles.Movie;
+import com.github.olvmat.streamingcli.model.titles.Movie;
 
 public class MoviesCatalog extends Catalog<Movie> {
     public MoviesCatalog() {

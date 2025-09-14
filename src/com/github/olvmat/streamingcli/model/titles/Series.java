@@ -1,4 +1,4 @@
-package com.github.olvmat.screenmatchcli.model.titles;
+package com.github.olvmat.streamingcli.model.titles;
 
 import java.util.ArrayList;
 import java.util.List;

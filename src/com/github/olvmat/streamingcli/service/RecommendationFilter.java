@@ -1,6 +1,6 @@
-package com.github.olvmat.screenmatchcli.service;
+package com.github.olvmat.streamingcli.service;
 
-import com.github.olvmat.screenmatchcli.model.Classifiable;
+import com.github.olvmat.streamingcli.model.Classifiable;
 
 public class RecommendationFilter {
     public String recommend(Classifiable classifiable) {
