@@ -7,10 +7,14 @@ public abstract class Title implements Classifiable, Comparable<Title> {
     protected final int releaseYear;
     protected int duration;
     protected int ratingsAmount;
-    private double ratingsSum;
+    protected double ratingsSum;
     protected double averageRating;
 
-    public Title(String name, int releaseYear, int duration) {
+    public Title(
+            String name,
+            int releaseYear,
+            int duration
+    ) {
         this.name = name;
         this.releaseYear = releaseYear;
         this.duration = duration;

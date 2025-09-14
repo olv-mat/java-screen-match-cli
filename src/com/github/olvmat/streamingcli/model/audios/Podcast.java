@@ -4,16 +4,16 @@ public class Podcast extends Audio {
     private final String host;
 
     public Podcast(
-            String title,
+            String name,
             int duration,
             String host
     ) {
-        super(title, duration);
+        super(name, duration);
         this.host = host;
     }
 
     public String info() {
-        return "Podcast: " + this.title + "\n" +
+        return "Podcast: " + this.name + "\n" +
                 "Host: " + this.host + "\n" +
                 "Duration: " + this.duration + " Minutes" + "\n" +
                 "Reproductions: " + this.reproductions + "\n" +
@@ -29,6 +29,6 @@ public class Podcast extends Audio {
 
     @Override
     public String toString() {
-        return this.title + "(" + this.host + ")";
+        return this.name + "(" + this.host + ")";
     }
 }

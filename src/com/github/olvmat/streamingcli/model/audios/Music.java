@@ -4,16 +4,16 @@ public class Music extends Audio {
     private final String singer;
 
     public Music(
-            String title,
+            String name,
             int duration,
             String singer
     ) {
-        super(title, duration);
+        super(name, duration);
         this.singer = singer;
     }
 
     public String info() {
-        return "Music: " + this.title + "\n" +
+        return "Music: " + this.name + "\n" +
                 "Singer: " + this.singer + "\n" +
                 "Duration: " + this.duration + " Minutes" + "\n" +
                 "Reproductions: " + this.reproductions + "\n" +
@@ -29,6 +29,6 @@ public class Music extends Audio {
 
     @Override
     public String toString() {
-        return this.title + "(" + this.singer + ")";
+        return this.name + "(" + this.singer + ")";
     }
 }

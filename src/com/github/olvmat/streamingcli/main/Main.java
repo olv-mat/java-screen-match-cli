@@ -2,7 +2,7 @@ package com.github.olvmat.streamingcli.main;
 
 import com.github.olvmat.streamingcli.model.titles.Movie;
 import com.github.olvmat.streamingcli.model.titles.Series;
-import com.github.olvmat.streamingcli.model.catalogs.MoviesCatalog;
+import com.github.olvmat.streamingcli.model.catalogs.MovieCatalog;
 import com.github.olvmat.streamingcli.model.catalogs.SeriesCatalog;
 import com.github.olvmat.streamingcli.model.titles.Title;
 import com.github.olvmat.streamingcli.console.ConsoleDisplay;
@@ -21,7 +21,7 @@ public class Main {
         System.out.println("Streaming CLI");
 
         ConsoleInput consoleInput = new ConsoleInput();
-        MoviesCatalog moviesCatalog = new MoviesCatalog();
+        MovieCatalog moviesCatalog = new MovieCatalog();
         SeriesCatalog seriesCatalog = new SeriesCatalog();
         MarathonCalculator marathonCalculator = new MarathonCalculator();
         RecommendationFilter recommendationFilter = new RecommendationFilter();

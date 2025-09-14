@@ -5,31 +5,25 @@ import com.github.olvmat.streamingcli.model.Classifiable;
 public class Episode implements Classifiable {
     private final int number;
     private final String name;
-    private final int views;
+    private int views;
 
     public Episode(
             int number,
-            String name,
-            int views
+            String name
     ) {
         this.number = number;
         this.name = name;
-        this.views = views;
     }
 
+    public void watch() {
+        System.out.println("Watching: " + this.name);
+        this.views ++;
+    }
+
+    @Override
     public int starsClassification() {
-        int views = this.views;
-        if (views <= 100) {
-            return 1;
-        } else if (views <= 500) {
-            return 2;
-        } else if (views <= 1000) {
-            return 3;
-        } else if (views <= 5000) {
-            return 4;
-        } else {
-            return 5;
-        }
+        int classification = (this.views / 100) + 1;
+        return Math.min(classification, 5);
     }
 
     public String info() {
