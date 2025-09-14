@@ -18,7 +18,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Screen Match");
+        System.out.println("Streaming CLI");
 
         ConsoleInput consoleInput = new ConsoleInput();
         MoviesCatalog moviesCatalog = new MoviesCatalog();
