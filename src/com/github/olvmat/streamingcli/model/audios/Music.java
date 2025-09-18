@@ -6,9 +6,11 @@ public class Music extends Audio {
     public Music(
             String name,
             int duration,
+            int reproductions,
+            int likes,
             String singer
     ) {
-        super(name, duration);
+        super(name, duration, reproductions, likes);
         this.singer = singer;
     }
 
@@ -17,8 +19,8 @@ public class Music extends Audio {
                 "Singer: " + this.singer + "\n" +
                 "Duration: " + this.duration + " Minutes" + "\n" +
                 "Reproductions: " + this.reproductions + "\n" +
-                "Likes: " + this.likes;
-
+                "Likes: " + this.likes + "\n" +
+                "Stars: " + this.starsClassification() + "\n";
     }
 
     @Override

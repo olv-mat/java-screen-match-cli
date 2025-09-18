@@ -7,9 +7,10 @@ public class Movie extends Title {
             String name,
             int releaseYear,
             int duration,
+            double averageRating,
             String director
     ) {
-        super(name, releaseYear, duration);
+        super(name, releaseYear, duration, averageRating);
         this.director = director;
     }
 
@@ -18,7 +19,6 @@ public class Movie extends Title {
                 "Release Year: " + this.releaseYear + "\n" +
                 "Director: " + this.director + "\n" +
                 "Duration: " + this.duration + " Minutes\n" +
-                "Ratings Amount: " + this.ratingsAmount + "\n" +
                 "Average Rating: " + getAverageRating() + "\n" +
                 "Stars: " + this.starsClassification() + "\n";
     }

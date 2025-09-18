@@ -12,12 +12,18 @@ public class Series extends Title {
     public Series(
             String name,
             int releaseYear,
+            double averageRating,
             int seasons,
             int episodesDurationAverage,
             boolean active,
             List<Episode> episodesList
     ) {
-        super(name, releaseYear, (episodesList.size() * episodesDurationAverage));
+        super(
+                name,
+                releaseYear,
+                (episodesList.size() * episodesDurationAverage),
+                averageRating
+        );
         this.seasons = seasons;
         this.episodes = episodesList.size();
         this.active = active;
@@ -39,7 +45,6 @@ public class Series extends Title {
                 "Seasons: " + this.seasons + "\n" +
                 "Episodes: " + this.episodes + "\n" +
                 "Total Duration: " + this.duration + " Minutes\n" +
-                "Ratings Amount: " + this.ratingsAmount + "\n" +
                 "Average Rating: " + getAverageRating() + "\n" +
                 "Stars: " + this.starsClassification() + "\n";
     }

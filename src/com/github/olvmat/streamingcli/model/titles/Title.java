@@ -5,19 +5,19 @@ import com.github.olvmat.streamingcli.model.Classifiable;
 public abstract class Title implements Classifiable, Comparable<Title> {
     protected final String name;
     protected final int releaseYear;
-    protected int duration;
-    protected int ratingsAmount;
-    protected double ratingsSum;
-    protected double averageRating;
+    protected final int duration;
+    protected final double averageRating;
 
     public Title(
             String name,
             int releaseYear,
-            int duration
+            int duration,
+            double averageRating
     ) {
         this.name = name;
         this.releaseYear = releaseYear;
         this.duration = duration;
+        this.averageRating = averageRating;
     }
 
     public int getDuration() {
@@ -26,16 +26,6 @@ public abstract class Title implements Classifiable, Comparable<Title> {
 
     public String getAverageRating() {
         return String.format("%.2f", this.averageRating);
-    }
-
-    public void rate(double rating) {
-        this.ratingsAmount ++;
-        this.ratingsSum += rating;
-        this.calculateAverageRating();
-    }
-
-    private void calculateAverageRating() {
-        this.averageRating = this.ratingsSum / this.ratingsAmount;
     }
 
     public int starsClassification() {

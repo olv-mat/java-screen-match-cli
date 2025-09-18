@@ -6,9 +6,11 @@ public class Podcast extends Audio {
     public Podcast(
             String name,
             int duration,
+            int reproductions,
+            int likes,
             String host
     ) {
-        super(name, duration);
+        super(name, duration, reproductions, likes);
         this.host = host;
     }
 
@@ -17,8 +19,8 @@ public class Podcast extends Audio {
                 "Host: " + this.host + "\n" +
                 "Duration: " + this.duration + " Minutes" + "\n" +
                 "Reproductions: " + this.reproductions + "\n" +
-                "Likes: " + this.likes;
-
+                "Likes: " + this.likes + "\n" +
+                "Stars: " + this.starsClassification() + "\n";
     }
 
     @Override

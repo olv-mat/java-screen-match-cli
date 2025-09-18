@@ -5,19 +5,16 @@ import com.github.olvmat.streamingcli.model.Classifiable;
 public class Episode implements Classifiable {
     private final int number;
     private final String name;
-    private int views;
+    private final int views;
 
     public Episode(
             int number,
-            String name
+            String name,
+            int views
     ) {
         this.number = number;
         this.name = name;
-    }
-
-    public void watch() {
-        System.out.println("Watching: " + this.name);
-        this.views ++;
+        this.views = views;
     }
 
     @Override
