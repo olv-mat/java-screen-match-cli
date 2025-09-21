@@ -4,12 +4,14 @@ import com.github.olvmat.streamingcli.console.ConsoleDisplay;
 import com.github.olvmat.streamingcli.console.ConsoleInput;
 import com.github.olvmat.streamingcli.model.Informative;
 import com.github.olvmat.streamingcli.model.catalogs.*;
+import com.github.olvmat.streamingcli.service.MarathonCalculator;
 
 import java.util.List;
 
 public class Main {
     private final ConsoleDisplay consoleDisplay = new ConsoleDisplay();
     private final ConsoleInput consoleInput = new ConsoleInput();
+    private final MarathonCalculator marathonCalculator = new MarathonCalculator();
     private final MoviesCatalog moviesCatalog = new MoviesCatalog();
     private final MusicsCatalog musicsCatalog = new MusicsCatalog();
     private final PodcastsCatalog podcastsCatalog = new PodcastsCatalog();
@@ -20,7 +22,12 @@ public class Main {
     }
 
     public void run() {
+        this.marathonCalculator.add(moviesCatalog.getItems());
+        this.marathonCalculator.add(seriesCatalog.getItems());
+
         this.consoleDisplay.display("Welcome to Our Streaming!\n");
+        this.consoleDisplay.display("Over " + this.marathonCalculator.getTotalTime() +
+                " Minutes of Content\n");
         while (true) {
             consoleDisplay.display("""
                     Menu
