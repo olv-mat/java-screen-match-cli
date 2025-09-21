@@ -2,9 +2,11 @@ package com.github.olvmat.streamingcli.main;
 
 import com.github.olvmat.streamingcli.console.ConsoleDisplay;
 import com.github.olvmat.streamingcli.console.ConsoleInput;
+import com.github.olvmat.streamingcli.model.Classifiable;
 import com.github.olvmat.streamingcli.model.Informative;
 import com.github.olvmat.streamingcli.model.catalogs.*;
 import com.github.olvmat.streamingcli.service.MarathonCalculator;
+import com.github.olvmat.streamingcli.service.RecommendationFilter;
 
 import java.util.List;
 
@@ -12,6 +14,7 @@ public class Main {
     private final ConsoleDisplay consoleDisplay = new ConsoleDisplay();
     private final ConsoleInput consoleInput = new ConsoleInput();
     private final MarathonCalculator marathonCalculator = new MarathonCalculator();
+    private final RecommendationFilter recommendationFilter = new RecommendationFilter();
     private final MoviesCatalog moviesCatalog = new MoviesCatalog();
     private final MusicsCatalog musicsCatalog = new MusicsCatalog();
     private final PodcastsCatalog podcastsCatalog = new PodcastsCatalog();
@@ -24,10 +27,10 @@ public class Main {
     public void run() {
         this.marathonCalculator.add(moviesCatalog.getItems());
         this.marathonCalculator.add(seriesCatalog.getItems());
+        int totalTime = this.marathonCalculator.getTotalTime();
 
         this.consoleDisplay.display("Welcome to Our Streaming!\n");
-        this.consoleDisplay.display("Over " + this.marathonCalculator.getTotalTime() +
-                " Minutes of Content\n");
+        this.consoleDisplay.display("Over " + totalTime + " Minutes of Content\n");
         while (true) {
             consoleDisplay.display("""
                     Menu
@@ -66,7 +69,7 @@ public class Main {
         }
     }
 
-    public <T extends Informative> void handleCatalog(
+    public <T extends Classifiable & Informative> void handleCatalog(
             Catalog<T> catalog
     ) {
         List<T> items = catalog.getItems();
@@ -90,6 +93,7 @@ public class Main {
                     } while (option > items.size());
                     T item = items.get(option - 1);
                     consoleDisplay.display(item.information());
+                    System.out.println(this.recommendationFilter.recommend(item));
                     break;
                 case 2:
                     return;

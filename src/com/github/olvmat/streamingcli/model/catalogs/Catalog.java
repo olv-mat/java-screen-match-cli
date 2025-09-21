@@ -1,11 +1,12 @@
 package com.github.olvmat.streamingcli.model.catalogs;
 
+import com.github.olvmat.streamingcli.model.Classifiable;
 import com.github.olvmat.streamingcli.model.Informative;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Catalog<T extends Informative> {
+public abstract class Catalog<T extends Classifiable & Informative> {
     protected final List<T> items = new ArrayList<>();
 
     public void addItem(T item) {
