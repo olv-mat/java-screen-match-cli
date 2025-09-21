@@ -2,34 +2,34 @@ package com.github.olvmat.streamingcli.model.catalogs;
 
 import com.github.olvmat.streamingcli.model.titles.Movie;
 
-public class MovieCatalog extends Catalog<Movie> {
-    public MovieCatalog() {
+public class MoviesCatalog extends Catalog<Movie> {
+    public MoviesCatalog() {
         this.addItem(new Movie(
                 "Hereditary",
                 2018,
                 127,
-                this.interactionsSimulator.simulateDouble(),
+                9.8,
                 "Ari Aster")
         );
         this.addItem(new Movie(
                 "The Witch",
                 2015,
                 92,
-                this.interactionsSimulator.simulateDouble(),
+                7.6,
                 "Robert Eggers")
         );
         this.addItem(new Movie(
                 "Get Out",
                 2017,
                 104,
-                this.interactionsSimulator.simulateDouble(),
+                8.8,
                 "Jordan Peele")
         );
         this.addItem(new Movie(
                 "A Quiet Place",
                 2018,
                 90,
-                this.interactionsSimulator.simulateDouble(),
+                7.2,
                 "John Krasinski")
         );
     }

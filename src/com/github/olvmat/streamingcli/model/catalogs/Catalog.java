@@ -1,13 +1,12 @@
 package com.github.olvmat.streamingcli.model.catalogs;
 
-import com.github.olvmat.streamingcli.service.InteractionsSimulator;
+import com.github.olvmat.streamingcli.model.Informative;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Catalog<T> {
+public abstract class Catalog<T extends Informative> {
     protected final List<T> items = new ArrayList<>();
-    protected final InteractionsSimulator interactionsSimulator = new InteractionsSimulator();
 
     public void addItem(T item) {
         this.items.add(item);

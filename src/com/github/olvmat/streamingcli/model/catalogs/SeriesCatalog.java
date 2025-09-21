@@ -10,7 +10,7 @@ public class SeriesCatalog extends Catalog<Series> {
         this.addItem(new Series(
                 "Stranger Things",
                 2016,
-                this.interactionsSimulator.simulateDouble(),
+                9.3,
                 1,
                 51,
                 true,
@@ -18,22 +18,22 @@ public class SeriesCatalog extends Catalog<Series> {
                         new Episode(
                                 1,
                                 "Chapter One: The Vanishing of Will Byers",
-                                this.interactionsSimulator.simulateIntBetween(500, 10000)
+                                7295
                         ),
                         new Episode(
                                 2,
                                 "Chapter Two: The Weirdo on Maple Street",
-                                this.interactionsSimulator.simulateIntBetween(500, 10000)
+                                5509
                         ),
                         new Episode(
                                 3,
                                 "Chapter Three: Holly, Jolly",
-                                this.interactionsSimulator.simulateIntBetween(500, 10000)
+                                9989
                         ),
                         new Episode(
                                 4,
                                 "Chapter Four: The Body",
-                                this.interactionsSimulator.simulateIntBetween(500, 10000)
+                                5085
                         )
                 )
         ));

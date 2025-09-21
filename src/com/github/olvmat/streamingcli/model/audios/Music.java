@@ -14,7 +14,8 @@ public class Music extends Audio {
         this.singer = singer;
     }
 
-    public String info() {
+    @Override
+    public String information() {
         return "Music: " + this.name + "\n" +
                 "Singer: " + this.singer + "\n" +
                 "Duration: " + this.duration + " Minutes" + "\n" +

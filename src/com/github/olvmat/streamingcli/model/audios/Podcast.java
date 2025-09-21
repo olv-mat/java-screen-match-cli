@@ -14,7 +14,8 @@ public class Podcast extends Audio {
         this.host = host;
     }
 
-    public String info() {
+    @Override
+    public String information() {
         return "Podcast: " + this.name + "\n" +
                 "Host: " + this.host + "\n" +
                 "Duration: " + this.duration + " Minutes" + "\n" +

@@ -1,8 +1,9 @@
 package com.github.olvmat.streamingcli.model.titles;
 
 import com.github.olvmat.streamingcli.model.Classifiable;
+import com.github.olvmat.streamingcli.model.Informative;
 
-public abstract class Title implements Classifiable, Comparable<Title> {
+public abstract class Title implements Classifiable, Comparable<Title>, Informative {
     protected final String name;
     protected final int releaseYear;
     protected final int duration;

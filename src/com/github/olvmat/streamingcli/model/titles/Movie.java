@@ -14,7 +14,8 @@ public class Movie extends Title {
         this.director = director;
     }
 
-    public String info() {
+    @Override
+    public String information() {
         return "Movie: " + this.name + "\n" +
                 "Release Year: " + this.releaseYear + "\n" +
                 "Director: " + this.director + "\n" +

@@ -38,7 +38,8 @@ public class Series extends Title {
         return this.active ? "Yes" : "No";
     }
 
-    public String info() {
+    @Override
+    public String information() {
         return "Series: " + this.name + "\n" +
                 "Active: " + this.isActive() + "\n" +
                 "Release Year: " + this.releaseYear + "\n" +
