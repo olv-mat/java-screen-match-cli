@@ -26,7 +26,7 @@ public class Podcast extends Audio {
 
     @Override
     public int starsClassification() {
-        int classification = (this.likes / 50) + 1;
+        int classification = (this.likes / 200) + 1;
         return Math.min(classification, 5);
     }
 

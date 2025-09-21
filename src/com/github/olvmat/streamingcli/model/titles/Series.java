@@ -46,7 +46,7 @@ public class Series extends Title {
                 "Seasons: " + this.seasons + "\n" +
                 "Episodes: " + this.episodes + "\n" +
                 "Total Duration: " + this.duration + " Minutes\n" +
-                "Average Rating: " + getAverageRating() + "\n" +
+                "Average Rating: " + this.getAverageRating() + "\n" +
                 "Stars: " + this.starsClassification() + "\n";
     }
 }

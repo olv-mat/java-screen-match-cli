@@ -3,7 +3,7 @@ package com.github.olvmat.streamingcli.model.titles;
 import com.github.olvmat.streamingcli.model.Classifiable;
 import com.github.olvmat.streamingcli.model.Informative;
 
-public abstract class Title implements Classifiable, Comparable<Title>, Informative {
+public abstract class Title implements Classifiable, Informative, Comparable<Title> {
     protected final String name;
     protected final int releaseYear;
     protected final int duration;
@@ -29,6 +29,7 @@ public abstract class Title implements Classifiable, Comparable<Title>, Informat
         return String.format("%.2f", this.averageRating);
     }
 
+    @Override
     public int starsClassification() {
         return (int) (this.averageRating / 2);
     }

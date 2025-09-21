@@ -26,7 +26,7 @@ public class Music extends Audio {
 
     @Override
     public int starsClassification() {
-        int classification = (this.reproductions / 1000) + 1;
+        int classification = (this.reproductions / 5000) + 1;
         return Math.min(classification, 5);
     }
 

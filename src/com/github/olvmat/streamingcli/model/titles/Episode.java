@@ -19,7 +19,7 @@ public class Episode implements Classifiable {
 
     @Override
     public int starsClassification() {
-        int classification = (this.views / 100) + 1;
+        int classification = (this.views / 2000) + 1;
         return Math.min(classification, 5);
     }
 
