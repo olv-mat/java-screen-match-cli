@@ -69,7 +69,7 @@ public class Main {
         }
     }
 
-    public <T extends Classifiable & Informative> void handleCatalog(
+    public <T extends Classifiable & Informative & Comparable<? super T>> void handleCatalog(
             Catalog<T> catalog
     ) {
         List<T> items = catalog.getItems();
