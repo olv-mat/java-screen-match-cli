@@ -1,7 +1,7 @@
 package com.github.olvmat.streamingcli.model.catalogs;
 
-import com.github.olvmat.streamingcli.model.Classifiable;
-import com.github.olvmat.streamingcli.model.Informative;
+import com.github.olvmat.streamingcli.model.interfaces.Classifiable;
+import com.github.olvmat.streamingcli.model.interfaces.Informative;
 
 import java.util.ArrayList;
 import java.util.Collections;

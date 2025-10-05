@@ -1,4 +1,4 @@
-package com.github.olvmat.streamingcli.service;
+package com.github.olvmat.streamingcli.service.calculators;
 
 import com.github.olvmat.streamingcli.model.titles.Title;
 

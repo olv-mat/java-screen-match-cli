@@ -1,6 +1,6 @@
 package com.github.olvmat.streamingcli.model.titles;
 
-import com.github.olvmat.streamingcli.model.Classifiable;
+import com.github.olvmat.streamingcli.model.interfaces.Classifiable;
 
 public class Episode implements Classifiable {
     private final int number;

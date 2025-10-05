@@ -1,7 +1,7 @@
 package com.github.olvmat.streamingcli.model.audios;
 
-import com.github.olvmat.streamingcli.model.Classifiable;
-import com.github.olvmat.streamingcli.model.Informative;
+import com.github.olvmat.streamingcli.model.interfaces.Classifiable;
+import com.github.olvmat.streamingcli.model.interfaces.Informative;
 
 public abstract class Audio implements Classifiable, Informative, Comparable<Audio> {
     protected final String name;
